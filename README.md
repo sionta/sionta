@@ -31,4 +31,5 @@ Freedoms 1 and 3 require source code to be available because studying and modify
 📕 &nbsp;**Latest Blog Posts**
 
 <!-- BLOG-POST-LIST:START -->
+- [The best Android apps of 2023](https://dev.to/sionta/the-best-android-apps-of-2022-223l)
 <!-- BLOG-POST-LIST:END -->
