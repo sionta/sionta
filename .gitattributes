@@ -1,0 +1,8 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+*.svg  text
+*.png -text
+*.jpg -text
+*.7z  -text
+*.zip -text
+*.exe -text

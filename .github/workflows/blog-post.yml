@@ -1,0 +1,23 @@
+name: blog post
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Runs every hour on the hour.
+  workflow_dispatch:
+
+permissions:
+  contents: write # To write the generated contents to the readme
+
+jobs:
+  blog-post:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: gautamkrishnar/blog-post-workflow@v1
+        with:
+          feed_list: 'https://dev.to/feed/sionta'
+          readme_path: ./README.md
+          max_post_count: 3
+          commit_message: 'upd: latest blog posts'
+          # enable_keepalive: true
+          # skip_commit: true

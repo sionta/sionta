@@ -1,0 +1,17 @@
+name: fork sync
+
+on:
+  schedule:
+    - cron: '00 1 * * 1' # Runs at 01:00 on Mondays.
+  workflow_dispatch:
+
+jobs:
+  fork-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - shell: pwsh
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          $json = gh repo list --fork --json nameWithOwner
+          $json | convertfrom-json | % { gh repo sync $_.nameWithOwner }
