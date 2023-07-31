@@ -1,6 +1,9 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 *.svg  text
+*.ai  -text
+*.psd -text
+*.gif -text
 *.png -text
 *.jpg -text
 *.7z  -text
