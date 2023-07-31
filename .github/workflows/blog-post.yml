@@ -18,6 +18,6 @@ jobs:
           feed_list: 'https://dev.to/feed/sionta'
           readme_path: ./README.md
           max_post_count: 3
-          commit_message: 'upd: sync latest blog posts'
-          # enable_keepalive: true
-          # skip_commit: true
+          # commit_message: 'upd: sync latest blog posts'
+          enable_keepalive: true
+          skip_commit: true
