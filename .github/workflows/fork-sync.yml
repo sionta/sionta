@@ -2,7 +2,7 @@ name: fork sync
 
 on:
   schedule:
-    - cron: '00 1 * * 1' # Runs at 01:00 on Mondays.
+    - cron: '0 1 * * 1' # Runs at 01:00 on Mondays.
   workflow_dispatch:
 
 jobs:
@@ -14,4 +14,5 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $json = gh repo list --fork --json nameWithOwner
-          $json | convertfrom-json | % { gh repo sync $_.nameWithOwner }
+          $json = (ConvertFrom-Json $json).nameWithOwner
+          foreach ($repo in $json) { gh repo sync $repo }
