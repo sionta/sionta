@@ -1,20 +1,23 @@
-<!-- markdownlint-disable MD041 MD033 -->
+<!-- https://github.com/DavidAnson/markdownlint -->
+<!-- markdownlint-disable MD041 MD033 MD012-->
 
-## Hi there <img src="./public/assets/emoji_raised_hand.gif" width="24px">
+## Hi there <img width="24px" alt="emoji_raised_hand" src="./public/assets/emoji_raised_hand.gif">
 
 _Lorem ipsum dolor sit amet, consectetur adipiscing elit._
 
-<p>📕 &nbsp;<strong>Latest Blog Posts</strong></p>
-
+### :books: Latest Blog Posts <!-- https://github.com/gautamkrishnar/blog-post-workflow -->
 <!-- BLOG-POST-LIST:START -->
-- [The best Android apps of 2023](https://dev.to/sionta/the-best-android-apps-of-2022-223l)
 <!-- BLOG-POST-LIST:END -->
 
-<p>📊 &nbsp;<strong>GitHub Stats</strong></p>
+### :star: GitHub Stats Card <!-- https://github.com/anuraghazra/github-readme-stats -->
 
-<img alt="stats" src="https://github-readme-stats.vercel.app/api?username=sionta&theme=solarized-dark&hide_border=false&include_all_commits=true&count_private=true" width="300"></br>
-<img alt="streak" src="https://github-readme-streak-stats.herokuapp.com/?user=sionta&theme=solarized-dark&hide_border=false" width="300"></br>
-<img alt="langs" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sionta&theme=solarized-dark&hide_border=false&include_all_commits=true&count_private=true&layout=compact" width="300">
+<a href="https://github.com/dracula/mixplorer">
+  <img height="100" align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=dracula&repo=mixplorer&theme=solarized-dark&hide_border=false&show_owner=true"/>
+</a>
+<a>
+  <img height="100" align="center" src="https://github-readme-stats.vercel.app/api?username=sionta&theme=solarized-dark&hide_border=false&include_all_commits=true&count_private=true"/>
+</a>
+
 
 <!--
 ### Hi there 👋
