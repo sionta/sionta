@@ -7,7 +7,7 @@ _Lorem ipsum dolor sit amet, consectetur adipiscing elit._
 
 <!-- ### :books: Latest Blog Posts https://github.com/gautamkrishnar/blog-post-workflow -->
 <!-- BLOG-POST-LIST:START -->
-- [Awesome Android apps in 2023](https://dev.to/sionta/the-best-android-apps-of-2022-223l)
+- [Awesome Android Apps](https://dev.to/sionta/the-best-android-apps-of-2022-223l)
 <!-- BLOG-POST-LIST:END -->
 
 <!-- ### :star: GitHub Dashboard Cards https://github.com/anuraghazra/github-readme-stats -->
