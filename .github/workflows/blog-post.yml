@@ -21,3 +21,4 @@ jobs:
           commit_message: 'upd: sync latest blog posts'
           # enable_keepalive: true
           # skip_commit: true
+        continue-on-error: true
