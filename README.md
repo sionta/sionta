@@ -1,7 +1,7 @@
 <!-- https://github.com/DavidAnson/markdownlint -->
 <!-- markdownlint-disable MD041 MD033 MD012-->
 
-## Hi there <img width="24px" alt="emoji_raised_hand" src="./public/assets/emoji_raised_hand.gif">
+## print('Hello, Wolrd! <img width="24px" alt="emoji_raised_hand" src="./public/assets/emoji_raised_hand.gif">')
 
 _Lorem ipsum dolor sit amet, consectetur adipiscing elit._
 
