@@ -15,7 +15,7 @@ _Lorem ipsum dolor sit amet, consectetur adipiscing elit._
 <a href="https://github.com/dracula/mixplorer"> <img height="100" src="https://github-readme-stats.vercel.app/api/pin/?username=dracula&repo=mixplorer&theme=solarized-dark&hide_border=false&show_owner=true"/></a>
 <!--<a><img height="100" src="https://github-readme-stats.vercel.app/api?username=sionta&theme=solarized-dark&hide_border=false&include_all_commits=true&count_private=true"/></a>-->
 
-https://rackrock.co.id/client/aff.php?aff=78
+<a href="https://rackrock.co.id/client/aff.php?aff=78" target="_blank"><img src="https://rackrock.co.id/img/affiliasi/hosting-unlimited/980x120.png"></a>
 
 <!--
 ### Hi there 👋
