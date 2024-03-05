@@ -11,8 +11,8 @@ jobs:
     steps:
       - shell: pwsh
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
         run: |
-          $json = gh repo list --fork --json nameWithOwner
-          $json = (ConvertFrom-Json $json).nameWithOwner
-          foreach ($repo in $json) { gh repo sync $repo }
+          $excludes = "sionta/mixplorer", "sionta/imageglass"
+          ./tools/fork-sync.ps1 -e $excludes
