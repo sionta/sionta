@@ -9,10 +9,11 @@ jobs:
   fork-sync:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
       - shell: pwsh
         env:
           # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           $excludes = "sionta/mixplorer", "sionta/imageglass"
-          ./tools/fork-sync.ps1 -e $excludes
+          & ./tools/fork-sync.ps1 -e $excludes
