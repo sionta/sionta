@@ -9,11 +9,11 @@ _Lorem ipsum dolor sit amet, consectetur adipiscing elit._
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->
 
+## Projects
 <!-- ### :star: GitHub Dashboard Cards https://github.com/anuraghazra/github-readme-stats -->
 
 <a href="https://github.com/dracula/mixplorer"> <img height="100" src="https://github-readme-stats.vercel.app/api/pin/?username=dracula&repo=mixplorer&theme=solarized-dark&hide_border=false&show_owner=true"/></a>
-<br>
-<a><img height="145" src="https://github-readme-stats.vercel.app/api?username=sionta&theme=solarized-dark&hide_border=false&include_all_commits=true&count_private=true"/></a>
+<!--<a><img height="100" src="https://github-readme-stats.vercel.app/api?username=sionta&theme=solarized-dark&hide_border=false&include_all_commits=true&count_private=true"/></a>-->
 
 <!--
 ### Hi there 👋
