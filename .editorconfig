@@ -1,22 +1,25 @@
-# EditorConfig is awesome: https://EditorConfig.org
-
-# top-most EditorConfig file
 root = true
 
 [*]
-indent_style = space
-indent_size = 4
 charset = utf-8
+indent_style = space
+indent_size = 2
 trim_trailing_whitespace = true
+
+# Unix-style newlines with a newline ending every file
+end_of_line = lf
 insert_final_newline = true
 
-[*.{xml,yml,yaml,svg}]
-indent_size = 2
+[*.{js,css,scss}]
+quote_type = single
 
-[*.{json,webmanifest}]
-end_of_line = lf
-indent_size = 2
+[*.{bat,cmd,ps1,psd1,psm1}]
+indent_size = 4
+end_of_line = crlf
+indent_style = space
 
-[*.{md,txt}]
-indent_size = 2
+[*.{yml,yaml}]
+quote_type = double
+
+[*.md]
 trim_trailing_whitespace = false

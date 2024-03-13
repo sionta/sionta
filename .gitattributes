@@ -1,13 +1,18 @@
 # Auto detect text files and perform LF normalization
 * text=auto
-*.svg  text
-*.ai  -text
-*.psd -text
-*.gif -text
-*.ico -text
-*.png -text
-*.jpg -text
-*.7z  -text
-*.zip -text
-*.exe -text
-AI24Settings* -text
+
+*.sh text eol=lf
+*.svg text
+*.{cmd,[cC][mM][dD]} text eol=crlf
+*.{bat,[bB][aA][tT]} text eol=crlf
+
+*.7z  binary
+*.ai  binary
+*.exe binary
+*.gif binary
+*.ico binary
+*.jpg binary
+*.png binary
+*.psd binary
+*.zip binary
+AI24Settings* binary

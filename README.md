@@ -1,6 +1,6 @@
 <!-- markdownlint-disable MD041 MD033 MD012-->
 
-## print('Hello, Wolrd! <img width="24px" alt="Hand Raised Emoji" src="./public/assets/emoji_hand_raised.gif">')
+## print('Hello, Wolrd! <img width="24px" alt="Hand Raised Emoji" src="./static/assets/emoji_hand_raised.gif">')
 
 _Lorem ipsum dolor sit amet, consectetur adipiscing elit._
 
