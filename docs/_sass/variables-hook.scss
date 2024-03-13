@@ -1,0 +1,41 @@
+/*
+  Appending custom SCSS variables will override the default ones in `_sass/addon/variables.scss`
+*/
+
+/* TODO: Custom color base on solarized https://ethanschoonover.com/solarized/ */
+
+/* Hex Colors */
+$base03_hex: #002b36;
+$base02_hex: #073642;
+$base01_hex: #586e75;
+$base00_hex: #657b83;
+$base0_hex: #839496;
+$base1_hex: #93a1a1;
+$base2_hex: #eee8d5;
+$base3_hex: #fdf6e3;
+$yellow_hex: #b58900;
+$orange_hex: #cb4b16;
+$red_hex: #dc322f;
+$magenta_hex: #d33682;
+$violet_hex: #6c71c4;
+$blue_hex: #268bd2;
+$cyan_hex: #2aa198;
+$green_hex: #859900;
+
+/* RGB Colors */
+$base03_rgb: rgb(0, 43, 54);
+$base02_rgb: rgb(7, 54, 66);
+$base01_rgb: rgb(88, 110, 117);
+$base00_rgb: rgb(101, 123, 131);
+$base0_rgb: rgb(131, 148, 150);
+$base1_rgb: rgb(147, 161, 161);
+$base2_rgb: rgb(238, 232, 213);
+$base3_rgb: rgb(253, 246, 227);
+$yellow_rgb: rgb(181, 137, 0);
+$orange_rgb: rgb(203, 75, 22);
+$red_rgb: rgb(220, 50, 47);
+$magenta_rgb: rgb(211, 54, 130);
+$violet_rgb: rgb(108, 113, 196);
+$blue_rgb: rgb(38, 139, 210);
+$cyan_rgb: rgb(42, 161, 152);
+$green_rgb: rgb(133, 153, 0);
