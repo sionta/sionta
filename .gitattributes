@@ -4,8 +4,10 @@
 *.ai  -text
 *.psd -text
 *.gif -text
+*.ico -text
 *.png -text
 *.jpg -text
 *.7z  -text
 *.zip -text
 *.exe -text
+AI24Settings* -text
