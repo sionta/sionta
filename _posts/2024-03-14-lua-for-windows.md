@@ -30,8 +30,8 @@ Lua combines simple procedural syntax with powerful data description constructs 
 
 ### Building
 
-1. Copy and save the script below with the filename `build.bat`{: .filepath }
-2. Open the Command Prompt and run `build.bat`{: .filepath }
+1. Copy and save the script below with the filename `build.bat`
+2. Open the Command Prompt and run `build.bat`
 3. The resulting directory structure of the build:
 
     ```
