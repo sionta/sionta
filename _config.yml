@@ -23,7 +23,7 @@ description: >- # used by seo meta and the atom feed
 
 # Fill in the protocol & hostname for your site.
 # e.g. 'https://username.github.io', note that it does not end with a '/'.
-url: "https://sionta.github.io"
+url:
 
 github:
   username: sionta # change to your github username
@@ -73,11 +73,10 @@ theme_mode: # [light | dark]
 # will be added to all image (site avatar & posts' images) paths starting with '/'
 #
 # e.g. 'https://cdn.com'
-img_cdn:
-# img_cdn: https://raw.githubusercontent.com/sionta/sionta/main/public/assets
+# img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar: https://github.com/sionta.png?size=100
+avatar: https://github.com/sionta.png?size=512
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -128,7 +127,7 @@ pwa:
 paginate: 10
 
 # The base URL of your site
-baseurl: sionta
+baseurl:
 
 # ------------ The following options are not recommended to be modified ------------------
 
@@ -189,12 +188,16 @@ compress_html:
 exclude:
   - "*.gem"
   - "*.gemspec"
+  - assets/excludes
+  - assets/tmp
   - docs
   - tools
-  - README.md
+  - jekyll-theme-chirpy.md
   - LICENSE
-  - rollup.config.js
   - package*.json
+  - README.1
+  - README.md
+  - rollup.config.js
 
 jekyll-archives:
   enabled: [categories, tags]
