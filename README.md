@@ -1,7 +1,7 @@
 <!-- https://github.com/DavidAnson/markdownlint -->
 <!-- markdownlint-disable MD041 MD033 MD012-->
 
-## print('Hello, Wolrd! <img width="24px" alt="emoji_raised_hand" src="./public/assets/emoji_raised_hand.gif">')
+## print('Hello, Wolrd! <img width="24px" alt="Hand Raised Emoji" src="./public/assets/hand_raised_emoji.gif">')
 
 _Lorem ipsum dolor sit amet, consectetur adipiscing elit._
 
@@ -9,11 +9,11 @@ _Lorem ipsum dolor sit amet, consectetur adipiscing elit._
 <!-- BLOG-POST-LIST:START -->
 <!-- BLOG-POST-LIST:END -->
 
-## Projects
 <!-- ### :star: GitHub Dashboard Cards https://github.com/anuraghazra/github-readme-stats -->
 
 <a href="https://github.com/dracula/mixplorer"> <img height="100" src="https://github-readme-stats.vercel.app/api/pin/?username=dracula&repo=mixplorer&theme=solarized-dark&hide_border=false&show_owner=true"/></a>
-<!--<a><img height="100" src="https://github-readme-stats.vercel.app/api?username=sionta&theme=solarized-dark&hide_border=false&include_all_commits=true&count_private=true"/></a>-->
+<br>
+<a><img height="145" src="https://github-readme-stats.vercel.app/api?username=sionta&theme=solarized-dark&hide_border=false&include_all_commits=true&count_private=true"/></a>
 
 <!--
 ### Hi there 👋
@@ -31,3 +31,4 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
