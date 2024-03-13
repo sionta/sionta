@@ -10,7 +10,11 @@ charset = utf-8
 trim_trailing_whitespace = true
 insert_final_newline = true
 
-[*.{y{a}ml}]
+[*.{xml,yml,yaml,svg}]
+indent_size = 2
+
+[*.{json,webmanifest}]
+end_of_line = lf
 indent_size = 2
 
 [*.{md,txt}]
