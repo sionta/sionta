@@ -1,13 +1,13 @@
 param(
-    [alias('e')]
-    [string[]]$excludes
+    [alias('e', 'ignore')]
+    [string[]]$Excludes
 )
 try {
     $json = gh repo list --fork --json nameWithOwner
     $repos = (ConvertFrom-Json $json).nameWithOwner
 
     foreach ($repo in $repos) {
-        if ($repo -notin $excludes) {
+        if ($repo -notin $Excludes) {
             gh repo sync $repo
         }
     }
