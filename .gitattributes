@@ -2,17 +2,23 @@
 * text=auto
 
 *.sh text eol=lf
-*.svg text
+
+# windows
 *.{cmd,[cC][mM][dD]} text eol=crlf
 *.{bat,[bB][aA][tT]} text eol=crlf
 
 *.7z  binary
-*.ai  binary
 *.exe binary
+*.zip binary
+
+# images
+*.svg text
 *.gif binary
 *.ico binary
 *.jpg binary
 *.png binary
+
+# adobe
+*.ai  binary
 *.psd binary
-*.zip binary
 AI24Settings* binary

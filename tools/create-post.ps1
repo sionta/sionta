@@ -1,4 +1,5 @@
-[CmdletBinding()]
+#Requires -Version 6
+
 param (
     [Parameter(Mandatory = $true)]
     [Alias('n', 'bn', 'name')]
@@ -8,49 +9,80 @@ param (
     [switch]$Force
 )
 
-$words = ($BaseName -replace "[/\-\\_]", " ") -split " "
-$camelCaseWords = foreach ($word in $words) {
-    $word.Substring(0, 1).ToUpper() + $word.Substring(1).ToLower()
+$nowDate = Get-Date -Format 'yyyy-MM-dd'
+
+$postDirs = @(
+    "$PSScriptRoot\"
+    "$PSScriptRoot\..",
+    "$PSScriptRoot\..\.."
+)
+
+$dirFound = $false
+foreach ($postDir in $postDirs) {
+    if (Test-Path "$postDir\_posts") {
+        $resolvedDir = Resolve-Path "$postDir\_posts"
+        $postFile = Join-Path $resolvedDir "$nowDate-$BaseName.md"
+        $dirFound = $true
+        break
+    }
 }
-$camelCaseString = $camelCaseWords -join " "
 
-$date = [DateTime]::Now.ToString("yyyy-MM-dd")
-$post = [System.IO.Path]::Combine($PSScriptRoot, "..\_posts")
-$path = [System.IO.Path]::Combine($post, "$date-$BaseName.md")
-
-if (-not $Force -and [System.IO.File]::Exists($path)) {
-    Write-Host "File '$path' already exists."
+if (-not $dirFound) {
+    Write-Host "Directory '_posts' not found.`n$postDirs"
     exit 1
 }
 
-$today = [datetime]::Now.ToString("yyyy-MM-dd HH:mm:ss zz00")
+if (-not $Force -and (Test-Path $postFile)) {
+    Write-Host "File '$postFile' already exists."
+    exit 1
+}
+
+function ConvertTo-TitleCase {
+    param([string]$inputString)
+    $words = $inputString -replace '[/\-\\_]', '\s+' -split '\s+'
+    $sencase = foreach ($word in $words) {
+        $word.Substring(0, 1).ToUpper() + $word.Substring(1).ToLower()
+    }
+    $sencase = $sencase -join ' '
+    return $sencase
+}
+
+function Get-RandomHexColor {
+    $randomValue = Get-Random -Minimum 0x00ff00 -Maximum (0xff0000 + 1)
+    $randomColor = '#' + '{0:X6}' -f $randomValue
+    return $randomColor
+}
+
+$titleName = ConvertTo-TitleCase $BaseName
+$char = Get-Random -InputObject ('#', '●', '▶') -Count 1
+$tagName = "<span style=`"color:$(Get-RandomHexColor)`">$char</span>"
+$formatDate = Get-Date -Format 'yyyy-MM-dd HH:mm:ss zz00'
 
 $contents = @"
 ---
-title: $camelCaseString
-author: [sionta]
-# date: $today
-# categories: [TOP_CATEGORIE, SUB_CATEGORIE]
-# tags: [TAG] # must be lowercase
+title: $titleName
+author: sionta
+date: $formatDate
+categories: [TOP_CATEGORIE, SUB_CATEGORIE] # title-case
+tags: [$tagName TAG_NAME] # lower-case
+toc: true
+# pin: true
 # img_path:
 # image:
 #   path:
-#   alt:
 #   lqip:
-# pin: true
-# toc: true
+#   alt:
 # math: false
+comments: true
 # mermaid: false
-# comments: true
 # render_with_liquid: false
 ---
 
 <!-- See https://chirpy.cotes.page/posts/write-a-new-post/ -->
 
-## $camelCaseString
+## $titleName
 
 "@
 
-$encoding = [System.Text.Encoding]::UTF8
-
-[System.IO.File]::WriteAllText($path, $contents, $encoding)
+Write-Host "Output file: $postFile"
+Out-File -FilePath $postFile -Encoding utf8NoBOM -InputObject $contents

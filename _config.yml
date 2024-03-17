@@ -7,7 +7,7 @@ lang: en #id-ID
 timezone: Asia/Tokyo
 
 title: Andre Attamimi
-tagline: run, study, share, and modify
+tagline: Software Developer
 description: >-
   Four freedoms, exploring and collaborating continuously
 avatar: https://github.com/sionta.png?size=100
@@ -31,8 +31,8 @@ social:
 google_site_verification: B5hQgjOCQikiEQoYbXisgVnKUPmpUg13FUz
 google_analytics:
   id: G-5EKDX8MEPB
-goatcounter:
-  id:
+google_adsense:
+  id: pub-6055274552295504
 
 comments:
   active: giscus
@@ -46,7 +46,6 @@ comments:
     lang:
     reactions_enabled: 1
 
-social_preview_image:
 toc: true
 paginate: 10
 
@@ -79,6 +78,11 @@ collections:
   tabs:
     output: true
     sort_by: order
+  portfolio:
+    output: true
+    sort_by: order
+  legals:
+    output: true
 
 defaults:
   - scope:
@@ -103,6 +107,18 @@ defaults:
       path: assets/js/dist
     values:
       swcache: true
+  - scope:
+      path: ""
+      type: legals
+    values:
+      layout: page
+      permalink: /:title
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: page
+      permalink: /:title
 
 compress_html:
   clippings: all
@@ -123,15 +139,12 @@ jekyll-archives:
     category: /categories/:name/
 
 exclude:
-  - assets/excludes
-  - assets/tmp
-  - tools
   - "*.bak"
   - "*.gem"
   - "*.gemspec"
-  - LICENSE
-  - README.1
-  - README.md
-  - package*.json
-  - rollup.config.js
-  - jekyll-theme-chirpy.md
+  - "/assets/excludes"
+  - "/tools"
+  - "LICENSE"
+  - "package*.json"
+  - "README.md"
+  - "rollup.config.js"
