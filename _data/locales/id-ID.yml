@@ -40,14 +40,12 @@ copyright:
     Kecuali jika dinyatakan, Postingan blog di situs ini dilisensikan
     di bawah Lisensi Creative Commons Attribution 4.0 International (CC BY 4.0) oleh penulis.
 
-meta: >- # Didukung oleh :PLATFORM dengan tema :THEME
-  <a href="/privacy">Tentang Saya</a>
-  &nbsp;&nbsp;
-  <a href="/disclaimer">Pernyataan Penyangkalan</a>
-  &nbsp;&nbsp;
-  <a href="/privacy">Kebijakan Privasi</a>
-  &nbsp;&nbsp;
-  <a href="/terms">Syarat Penggunaan</a>
+meta: # Didukung oleh :PLATFORM dengan tema :THEME.
+
+policies:
+  disclaimer: Pernyataan Penyangkalan
+  privacy_policy: Kebijakan Privasi
+  terms_of_use: Syarat Penggunaan
 
 not_found:
   statment: Maaf, kami gagal menemukan URL itu atau memang mengarah ke sesuatu yang tidak ada.

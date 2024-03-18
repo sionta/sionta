@@ -3,15 +3,15 @@ theme: jekyll-theme-chirpy
 url:
 baseurl:
 
-lang: en #id-ID
+lang: en # id-ID
 timezone: Asia/Tokyo
 
 title: Andre Attamimi
 tagline: Software Developer
 description: >-
   Four freedoms, exploring and collaborating continuously
-avatar: https://github.com/sionta.png?size=100
-
+# avatar: https://github.com/sionta.png?size=100
+avatar: https://avatars.githubusercontent.com/u/73837775?s=100
 img_cdn:
 theme_mode: # [light | dark]
 
@@ -81,7 +81,7 @@ collections:
   portfolio:
     output: true
     sort_by: order
-  legals:
+  policies:
     output: true
 
 defaults:
@@ -107,12 +107,6 @@ defaults:
       path: assets/js/dist
     values:
       swcache: true
-  - scope:
-      path: ""
-      type: legals
-    values:
-      layout: page
-      permalink: /legals/:title/
   - scope:
       path: ""
       type: portfolio
