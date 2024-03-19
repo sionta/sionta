@@ -747,7 +747,10 @@ $btn-mb: 0.5rem;
   .profile-wrapper {
     @include mt-mb(2.5rem);
     @extend %clickable-transition;
-    display: ruby;
+
+    padding-left: 2.5rem;
+    padding-right: 1.25rem;
+    width: 100%;
   }
 
   .site-title {

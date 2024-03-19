@@ -7,49 +7,25 @@
     {{- '©' }}
     <time>{{ 'now' | date: '%Y' }}</time>
     {% if site.social.links %}
-      <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
+    <a href="{{ site.social.links[0] }}">{{ site.social.name }}</a>.
     {% else %}
-      <em class="fst-normal">{{ site.social.name }}</em>.
+    <em class="fst-normal">{{ site.social.name }}</em>.
     {% endif %}
 
     {% if site.data.locales[include.lang].copyright.brief %}
-      <span
-        data-bs-toggle="tooltip"
-        data-bs-placement="top"
-        title="{{ site.data.locales[include.lang].copyright.verbose }}">
-        {{- site.data.locales[include.lang].copyright.brief -}}
-      </span>
+    <span data-bs-toggle="tooltip" data-bs-placement="top"
+      title="{{ site.data.locales[include.lang].copyright.verbose }}">
+      {{- site.data.locales[include.lang].copyright.brief -}}
+    </span>
     {% endif %}
   </p>
   <p>
-    {% if site.data.locales[page.lang] %}
-      {% assign lang = page.lang %}
-    {% elsif site.data.locales[site.lang] %}
-      {% assign lang = site.lang %}
-    {% else %}
-      {% assign lang = 'en' %}
-    {% endif %}
-    {% assign policy = site.data.locales[lang].policies %}
-    {% assign disclaimer = policy.disclaimer %}
-    {% assign privacy_policy = policy.privacy_policy %}
-    {% assign terms_of_use = policy.terms_of_use %}
-    {% if lang == 'en' %}
-      <a href="/policies/disclaimer">{{ disclaimer }}</a>&nbsp;&nbsp;
-      <a href="/policies/privacy-policy">{{ privacy_policy }}</a>&nbsp;&nbsp;
-      <a href="/policies/terms-of-use">{{ terms_of_use }}</a>
-    {% else %}
-      <a href="/policies/{{ lang }}/disclaimer">{{ disclaimer }}</a>&nbsp;&nbsp;
-      <a href="/policies/{{ lang }}/privacy-policy">{{ privacy_policy }}</a>&nbsp;&nbsp;
-      <a href="/policies/{{ lang }}/terms-of-use">{{ terms_of_use }}</a>
-    {% endif %}
-  </p>
-  {% comment %} <p>
     {%- capture _platform -%}
-      <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
+    <a href="https://jekyllrb.com" target="_blank" rel="noopener">Jekyll</a>
     {%- endcapture -%}
     {%- capture _theme -%}
-      <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
+    <a href="https://github.com/cotes2020/jekyll-theme-chirpy" target="_blank" rel="noopener">Chirpy</a>
     {%- endcapture -%}
     {{ site.data.locales[include.lang].meta | replace: ':PLATFORM', _platform | replace: ':THEME', _theme }}
-  </p> {% endcomment %}
+  </p>
 </footer>

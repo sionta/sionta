@@ -1,6 +1,0 @@
-{
-    "powershell.codeFormatting.preset": "OTBS",
-    "powershell.codeFormatting.useCorrectCasing": true,
-    "powershell.codeFormatting.autoCorrectAliases": true,
-    "svg.preview.background": "editor"
-}

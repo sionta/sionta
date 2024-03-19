@@ -15,9 +15,6 @@ toc:
   css: /assets/lib/tocbot/tocbot.min.css
   js: /assets/lib/tocbot/tocbot.min.js
 
-tabler:
-  css: /assets/lib/tabler/tabler-icons.min.css
-
 fontawesome:
   css: /assets/lib/fontawesome-free/css/all.min.css
 

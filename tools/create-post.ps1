@@ -54,8 +54,8 @@ function Get-RandomHexColor {
 }
 
 $titleName = ConvertTo-TitleCase $BaseName
-$char = Get-Random -InputObject ('#', '●', '▶') -Count 1
-$tagName = "<span style=`"color:$(Get-RandomHexColor)`">$char</span>"
+# $char = Get-Random -InputObject ('#', '●', '▶') -Count 1
+# $tagName = "<span style=`"color:$(Get-RandomHexColor)`">$char</span>"
 $formatDate = Get-Date -Format 'yyyy-MM-dd HH:mm:ss zz00'
 
 $contents = @"
@@ -63,8 +63,8 @@ $contents = @"
 title: $titleName
 author: sionta
 date: $formatDate
-categories: [TOP_CATEGORIE, SUB_CATEGORIE] # title-case
-tags: [$tagName TAG_NAME] # lower-case
+categories: [TOP, SUBS]
+tags: [TAGS]
 toc: true
 # pin: true
 # img_path:
@@ -72,10 +72,7 @@ toc: true
 #   path:
 #   lqip:
 #   alt:
-# math: false
 comments: true
-# mermaid: false
-# render_with_liquid: false
 ---
 
 <!-- See https://chirpy.cotes.page/posts/write-a-new-post/ -->
