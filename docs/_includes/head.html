@@ -41,7 +41,7 @@
 <meta property="twitter:image" content="{{ img_url }}" />
 {%- endcapture -%}
     {% assign old_meta_clip = '
-                  <meta name=' t witter: card' content=' s ummary' />' %}
+                        <meta name=' t witter: card' content=' s ummary' />' %}
     {% assign new_meta_clip = og_image | append: twitter_image %}
     {% assign seo_tags = seo_tags | replace: old_meta_clip, new_meta_clip %}
   {% endif %}
@@ -99,7 +99,7 @@
   {% endif %}
 
   <!-- Vercel analytics -->
-  {% if jekyll.environment == 'production'%}
+  {% if jekyll.environment == 'production' %}
     <script>
       window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
     </script>

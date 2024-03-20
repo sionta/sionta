@@ -1,0 +1,8 @@
+<!-- Hyvor talk comments -->
+{% if jekyll.environment == 'production' and site.comments.hyvor.website_id != empty and site.comments.hyvor.website_id %}
+  <script
+    async
+    src="https://talk.hyvor.com/embed/embed.js"
+    type="module"></script>
+  <hyvor-talk-comments website-id="{{ site.comments.hyvor.website_id }}" page-id="{{ site.comments.hyvor.page_id }}"></hyvor-talk-comments>
+{% endif %}
