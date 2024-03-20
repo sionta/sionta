@@ -184,7 +184,7 @@ defaults:
       type: portfolio
     values:
       layout: page
-      permalink: /portfolio/:title
+      permalink: /portfolio/:title/
 
 sass:
   style: compressed
