@@ -1,18 +1,20 @@
 <!-- https://talk.hyvor.com/docs/install -->
-
-<script async type="module"
-  src="https://talk.hyvor.com/embed/embed.js"
-></script>
-
-<hyvor-talk-comments
-  website-id="{{ site.comments.hyvor.website_id }}"
-  page-language="{{ page.lang | default: site.alt_lang | default: site.lang }}"
-  loading="lazy"
-  colors="os"
-  page-id=""
-  page-url=""
-  page-title=""
-></hyvor-talk-comments>
+<div>
+  <script
+    async
+    src="https://talk.hyvor.com/embed/embed.js"
+    type="module"
+  ></script>
+  <hyvor-talk-comments
+    website-id="{{ site.comments.hyvor.website_id }}"
+    page-language="{{ page.lang | default: site.alt_lang | default: site.lang }}"
+    loading="lazy"
+    colors="os"
+    page-id=""
+    page-url=""
+    page-title=""
+  ></hyvor-talk-comments>
+</div>
 
 <!--
 <script type="text/javascript">
