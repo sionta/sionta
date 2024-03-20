@@ -8,7 +8,20 @@
   {% assign lang = 'en' %}
 {% endif %}
 
-<script type="text/javascript">
+<script
+  async
+  src="https://talk.hyvor.com/embed/embed.js"
+  type="module"></script>
+<hyvor-talk-comments
+  website-id="{{ site.comments.hyvor.website_id }}"
+  page-id="{{ site.comments.hyvor.page_id }}"
+  page-url="{{ page.url | absolute_url }}"
+  page-title="{{ page.title | escape }}"
+  page-language="{{ lang }}"
+  colors="os"
+  loading="lazy"></hyvor-talk-comments>
+
+{% comment %} <script type="text/javascript">
   (function () {
     const comments = document.createElement("hyvor-talk-comments");
     comments.setAttribute('website-id', '{{ site.comments.hyvor.website_id }}');
@@ -25,4 +38,4 @@
     script.type = "module";
     document.head.appendChild(script);
   })();
-</script>
+</script> {% endcomment %}
