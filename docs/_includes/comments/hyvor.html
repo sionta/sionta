@@ -1,27 +1,21 @@
 <!-- https://talk.hyvor.com/docs/install -->
 
-{% if site.data.locales[page.lang] %}
-  {% assign lang = page.lang %}
-{% elsif site.data.locales[site.lang] %}
-  {% assign lang = site.lang %}
-{% else %}
-  {% assign lang = 'en' %}
-{% endif %}
-
-<script
-  async
+<script async type="module"
   src="https://talk.hyvor.com/embed/embed.js"
-  type="module"></script>
+></script>
+
 <hyvor-talk-comments
   website-id="{{ site.comments.hyvor.website_id }}"
-  page-id="{{ site.comments.hyvor.page_id }}"
-  page-url="{{ page.url | absolute_url }}"
-  page-title="{{ page.title | escape }}"
-  page-language="{{ lang }}"
+  page-language="{{ page.lang | default: site.alt_lang | default: site.lang }}"
+  loading="lazy"
   colors="os"
-  loading="lazy"></hyvor-talk-comments>
+  page-id=""
+  page-url=""
+  page-title=""
+></hyvor-talk-comments>
 
-{% comment %} <script type="text/javascript">
+<!--
+<script type="text/javascript">
   (function () {
     const comments = document.createElement("hyvor-talk-comments");
     comments.setAttribute('website-id', '{{ site.comments.hyvor.website_id }}');
@@ -38,4 +32,4 @@
     script.type = "module";
     document.head.appendChild(script);
   })();
-</script> {% endcomment %}
+</script> -->
