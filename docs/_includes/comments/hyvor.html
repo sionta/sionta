@@ -1,6 +1,28 @@
-<!-- Hyvor talk comments -->
-<script
-  async
-  src="https://talk.hyvor.com/embed/embed.js"
-  type="module"></script>
-<hyvor-talk-comments website-id="{{ site.comments.hyvor.website_id }}" page-id="{{ site.comments.hyvor.page_id }}"></hyvor-talk-comments>
+<!-- https://talk.hyvor.com/docs/install -->
+
+{% if site.data.locales[page.lang] %}
+  {% assign lang = page.lang %}
+{% elsif site.data.locales[site.lang] %}
+  {% assign lang = site.lang %}
+{% else %}
+  {% assign lang = 'en' %}
+{% endif %}
+
+<script type="text/javascript">
+  (function () {
+    const comments = document.createElement("hyvor-talk-comments");
+    comments.setAttribute('website-id', '{{ site.comments.hyvor.website_id }}');
+    comments.setAttribute('page-id', '{{ site.comments.hyvor.page_id }}');
+    comments.setAttribute('page-url', '{{ page.url | absolute_url }}');
+    comments.setAttribute('page-title', '{{ page.title | escape }}');
+    comments.setAttribute('page-language', '{{ lang }}');
+    comments.setAttribute('colors', 'os');
+    comments.setAttribute('loading', 'lazy');
+    document.getElementById("comments-wrap").appendChild(comments);
+    const script = document.createElement("script");
+    script.src = "https://talk.hyvor.com/embed/embed.js";
+    script.async = true;
+    script.type = "module";
+    document.head.appendChild(script);
+  })();
+</script>
