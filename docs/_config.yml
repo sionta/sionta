@@ -108,7 +108,6 @@ comments:
     reactions_enabled: # optional, default to the value of `1`
   hyvor:
     website_id: 10749 # https://talk.hyvor.com/
-    page_id:
 
 # Self-hosted static assets, optional › https://github.com/cotes2020/chirpy-static-assets
 assets:
