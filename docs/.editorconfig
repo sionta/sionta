@@ -13,11 +13,6 @@ insert_final_newline = true
 [*.{js,css,scss}]
 quote_type = single
 
-[*.{bat,cmd,ps1,psd1,psm1}]
-indent_size = 4
-end_of_line = crlf
-indent_style = space
-
 [*.{yml,yaml}]
 quote_type = double
 

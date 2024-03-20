@@ -12,9 +12,9 @@ param (
 $nowDate = Get-Date -Format 'yyyy-MM-dd'
 
 $postDirs = @(
-    "$PSScriptRoot\"
-    "$PSScriptRoot\..",
-    "$PSScriptRoot\..\.."
+    "$PSScriptRoot\docs"
+    "$PSScriptRoot\..\docs",
+    "$PSScriptRoot\..\..\docs"
 )
 
 $dirFound = $false

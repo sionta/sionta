@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths-ignore:
-      - assets/excludes
+      - excludes
       - .gitignore
       - README.md
       - LICENSE
