@@ -15,19 +15,22 @@
       --ht-color-box-secondary-text: #000000;
 
       /* other styles */
-      --ht-box-shadow: 5px 5px 0px rgba(0,0,0,0.05);
+      --ht-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.05);
       --ht-box-radius: 10px;
       --ht-box-border: 1px solid transparent;
       --ht-button-radius: 10px;
     }
   </style>
-  <script>
-    onColorModeChange = function(mode) {
+  <script
+      async
+      src="https://talk.hyvor.com/embed/embed.js"
+      type="module"
+      crossorigin="anonymous"
+    > onColorModeChange = function (mode) {
       document.querySelector('hyvor-talk-comments').setAttribute('colors', mode);
     }
   </script>
-  <script async src="https://talk.hyvor.com/embed/embed.js" type="module" crossorigin="anonymous"></script>
-  <div id="hyvor-talk-comments" class="hyvor-talk-comments">
+  <div id="hyvor-talk-comments">
     <hyvor-talk-comments
       website-id="{{ id_hyvor }}"
       page-id="{{ page.url | truncate: 100 }}"
