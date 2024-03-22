@@ -9,14 +9,14 @@ theme: jekyll-theme-chirpy
 lang: en
 
 # Change to your timezone › https://kevinnovak.github.io/Time-Zone-Picker
-timezone:
+timezone: Asia/Tokyo
 
 # jekyll-seo-tag settings › https://github.com/jekyll/jekyll-seo-tag/blob/master/docs/usage.md
 # ↓ --------------------------
 
-title: Chirpy # the main title
+title: Andre Attamimi # the main title
 
-tagline: A text-focused Jekyll theme # it will display as the sub-title
+tagline: Minimal Developer # it will display as the sub-title
 
 description: >- # used by seo meta and the atom feed
   A minimal, responsive and feature-rich Jekyll theme for technical writing.
@@ -26,34 +26,34 @@ description: >- # used by seo meta and the atom feed
 url: ""
 
 github:
-  username: github_username # change to your github username
+  username: sionta # change to your github username
 
 twitter:
-  username: twitter_username # change to your twitter username
+  username: r007mmxv # change to your twitter username
 
 social:
   # Change to your full name.
   # It will be displayed as the default author of the posts and the copyright owner in the Footer
-  name: your_full_name
-  email: example@domain.com # change to your email address
+  name: Andre Attamimi
+  email: andreattamimi@outlook.com # change to your email address
   links:
     # The first element serves as the copyright owner's link
-    - https://twitter.com/username # change to your twitter homepage
-    - https://github.com/username # change to your github homepage
+    - https://twitter.com/r007mmxv # change to your twitter homepage
+    - https://github.com/sionta # change to your github homepage
     # Uncomment below to add more social links
     # - https://www.facebook.com/username
-    # - https://www.linkedin.com/in/username
+    - https://www.linkedin.com/in/andreattamimi
 
-google_site_verification: # fill in to your verification string
+google_site_verification: B5hQgjOCQikiEQoYbXisgVnKUPmpUg13FUz # fill in to your verification string
 
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
 google_analytics:
-  id: # fill in your Google Analytics ID
+  id: G-5EKDX8MEPB # fill in your Google Analytics ID
 
 goatcounter:
-  id: # fill in your Goatcounter ID
+  id: sionta # fill in your Goatcounter ID
 
 # Prefer color scheme setting.
 #
@@ -76,7 +76,7 @@ theme_mode: # [light | dark]
 img_cdn:
 
 # the avatar on sidebar, support local or CORS resources
-avatar:
+avatar: https://github.com/sionta.png?size=100
 
 # The URL of the site-wide social preview image used in SEO `og:image` meta tag.
 # It can be overridden by a customized `page.image` in front matter.
@@ -86,20 +86,22 @@ social_preview_image: # string, local or CORS resources
 toc: true
 
 comments:
-  active: # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
+  active: hyvor # The global switch for posts comments, e.g., 'disqus'.  Keep it empty means disable
   # The active options are as follows:
+  hyvor:
+    website_id: 10749 # https://talk.hyvor.com/
   disqus:
     shortname: # fill with the Disqus shortname. › https://help.disqus.com/en/articles/1717111-what-s-a-shortname
   # utterances settings › https://utteranc.es/
   utterances:
-    repo: # <gh-username>/<repo>
-    issue_term: # < url | pathname | title | ...>
+    repo: sionta/sionta # <gh-username>/<repo>
+    issue_term: pathname # < url | pathname | title | ...>
   # Giscus options › https://giscus.app
   giscus:
-    repo: # <gh-username>/<repo>
-    repo_id:
-    category:
-    category_id:
+    repo: sionta/sionta # <gh-username>/<repo>
+    repo_id: R_kgDOKByokw
+    category: Q&A
+    category_id: DIC_kwDOKByok84Cd8WP
     mapping: # optional, default to 'pathname'
     input_position: # optional, default to 'bottom'
     lang: # optional, default to the value of `site.lang`
@@ -145,6 +147,9 @@ collections:
   tabs:
     output: true
     sort_by: order
+  portfolio:
+    output: true
+    permalink: /portfolio/:title/
 
 defaults:
   - scope:
@@ -193,6 +198,7 @@ exclude:
   - LICENSE
   - rollup.config.js
   - package*.json
+  - excludes
 
 jekyll-archives:
   enabled: [categories, tags]
