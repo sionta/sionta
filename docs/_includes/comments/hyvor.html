@@ -1,5 +1,4 @@
 <!-- https://talk.hyvor.com/docs/install -->
-<!-- <script src="https://talk.hyvor.com/embed/embed.js" crossorigin="anonymous" type="module" async></script> -->
 
 {% assign is_hyvor = site.comments.active == 'hyvor' %}
 {% assign id_hyvor = site.comments.hyvor.website_id | default: '' %}
@@ -27,6 +26,7 @@
       document.querySelector('hyvor-talk-comments').setAttribute('colors', mode);
     }
   </script>
+  <script async src="https://talk.hyvor.com/embed/embed.js" type="module" crossorigin="anonymous"></script>
   <div id="hyvor-talk-comments" class="hyvor-talk-comments">
     <hyvor-talk-comments
       website-id="{{ id_hyvor }}"
