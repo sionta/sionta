@@ -1,8 +1,9 @@
 <!-- https://talk.hyvor.com/docs/install -->
 
-{% assign is_hyvor = site.comments.active == 'hyvor' %}
-{% assign id_hyvor = site.comments.hyvor.website_id | default: '' %}
-{% if is_hyvor and id_hyvor != '' %}
+{% assign hyvor_on = site.comments.active == 'hyvor' %}
+{% assign website_id = site.comments.hyvor.website_id | default: '' %}
+{% if hyvor_on and website_id != '' %}
+  <div id="hyvor-talk-comments"></div>
   <style>
     hyvor-talk-comments {
       /* colors */
@@ -21,24 +22,25 @@
       --ht-button-radius: 10px;
     }
   </style>
-  <script
-      async
-      src="https://talk.hyvor.com/embed/embed.js"
-      type="module"
-      crossorigin="anonymous"
-    > onColorModeChange = function (mode) {
-      document.querySelector('hyvor-talk-comments').setAttribute('colors', mode);
-    }
-  </script>
-  <div id="hyvor-talk-comments">
-    <hyvor-talk-comments
-      website-id="{{ id_hyvor }}"
-      page-id="{{ page.url | truncate: 100 }}"
-      page-url="{{ page.url | absolute_url }}"
-      page-title="{{ page.title }}"
-      page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-      colors="{{ site.comments.hyvor.colors | default: 'os' }}"
-      loading="lazy"
-    ></hyvor-talk-comments>
-  </div>
+  <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+  <hyvor-talk-comments
+    website-id="{{ site.comments.hyvor.website_id }}"
+    page-id=""
+    page-url=""
+    page-title=""
+    page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
+    loading="lazy"
+  ></hyvor-talk-comments>
 {% endif %}
+
+<!--
+  <hyvor-talk-comments
+    website-id="{{ site.comments.hyvor.website_id }}"
+    page-id="{{ page.url | truncate: 100 }}"
+    page-url="{{ page.url | absolute_url }}"
+    page-title="{{ page.title }}"
+    page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
+    colors="{{ site.comments.hyvor.colors | default: 'os' }}"
+    loading="lazy"
+  ></hyvor-talk-comments>
+ -->
