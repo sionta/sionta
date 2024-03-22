@@ -1,9 +1,0 @@
-{
-  "[html]": {
-    "editor.defaultFormatter": "sissel.shopify-liquid"
-  },
-  "[liquid]": {
-    "editor.defaultFormatter": "sissel.shopify-liquid",
-    "editor.formatOnSave": true
-  },
-}
