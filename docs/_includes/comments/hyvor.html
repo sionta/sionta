@@ -6,15 +6,6 @@
   <div id="hyvor-talk-comments"></div>
   <style>
     hyvor-talk-comments {
-      /* colors */
-      --ht-color-accent: #000000;
-      --ht-color-accent-text: #000000;
-      --ht-color-box: #000000;
-      --ht-color-box-text: #000000;
-      --ht-color-box-text-light: #0000000;
-      --ht-color-box-secondary: #000000;
-      --ht-color-box-secondary-text: #000000;
-
       /* other styles */
       --ht-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.05);
       --ht-box-radius: 10px;
@@ -29,6 +20,7 @@
     page-url=""
     page-title=""
     page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
+    colors=""
     loading="lazy"
   ></hyvor-talk-comments>
 {% endif %}
