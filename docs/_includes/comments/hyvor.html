@@ -1,56 +1,21 @@
 <!-- https://talk.hyvor.com/docs/install -->
+
 {% assign is_hyvor = site.comments.active == 'hyvor' %}
 {% assign website_id = site.comments.hyvor.website_id | default: '' %}
 {% if is_hyvor and website_id != '' %}
-  <div id="hyvor-talk-comments"></div>
   <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
-  <script>
-    // Function to update Hyvor Talk colors based on the theme
-    function updateHyvorTalkColors(theme) {
-      var hyvorComments = document.querySelector('hyvor-talk-comments');
-      if (!hyvorComments) return;
-
-      if (theme === 'dark') {
-        hyvorComments.setAttribute('colors', 'dark'); // Dark mode colors
-      } else {
-        hyvorComments.setAttribute('colors', 'light'); // Light mode colors
-      }
-    }
-
-    // Function to detect theme change and update Hyvor Talk colors
-    function detectThemeChange() {
-      var darkThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
-      updateHyvorTalkColors(darkThemeQuery.matches ? 'dark' : 'light'); // Initial update based on system theme
-
-      darkThemeQuery.addListener(function(event) {
-        updateHyvorTalkColors(event.matches ? 'dark' : 'light'); // Update colors when system theme changes
-      });
-    }
-
-    // Listen for 'DOMContentLoaded' event to run detectThemeChange
-    document.addEventListener('DOMContentLoaded', detectThemeChange);
-
-    // Listen for 'comment:published' event
-    document.addEventListener('comment:published', function (e) {
-      console.log("Comment ID: " + e.detail.id);
-    });
-  </script>
-
-  <hyvor-talk-comments
-    website-id="{{ site.comments.hyvor.website_id }}"
-    page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-    loading="lazy"
-  ></hyvor-talk-comments>
-{% endif %}
-
-
-<!--
-{% assign is_hyvor = site.comments.active == 'hyvor' %}
-{% assign website_id = site.comments.hyvor.website_id | default: '' %}
-{% if is_hyvor and website_id != '' %}
   <div id="hyvor-talk-comments"></div>
   <style>
     hyvor-talk-comments {
+      /* colors */
+      /* --ht-color-accent: #000000; */
+      /* --ht-color-accent-text: #000000; */
+      /* --ht-color-box: #000000; */
+      /* --ht-color-box-text: #000000; */
+      /* --ht-color-box-text-light: #0000000; */
+      /* --ht-color-box-secondary: #000000; */
+      /* --ht-color-box-secondary-text: #000000; */
+
       /* other styles */
       --ht-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.05);
       --ht-box-radius: 10px;
@@ -58,26 +23,10 @@
       --ht-button-radius: 10px;
     }
   </style>
-  <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
   <hyvor-talk-comments
     website-id="{{ site.comments.hyvor.website_id }}"
-    page-id=""
-    page-url=""
-    page-title=""
     page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
     colors="{{ site.comments.hyvor.colors | default: 'os' }}"
     loading="lazy"
   ></hyvor-talk-comments>
-{% endif %} -->
-
-<!--
-  <hyvor-talk-comments
-    website-id="{{ site.comments.hyvor.website_id }}"
-    page-id="{{ page.url | truncate: 100 }}"
-    page-url="{{ page.url | absolute_url }}"
-    page-title="{{ page.title }}"
-    page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-    colors="{{ site.comments.hyvor.colors | default: 'os' }}"
-    loading="lazy"
-  ></hyvor-talk-comments>
- -->
+{% endif %}
