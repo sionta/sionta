@@ -37,4 +37,4 @@ title: Policies
 
 If you have any additional questions about our privacy policy or disclaimer, please contact us through the contact page.
 
-Andre Attamimi [andreattamimi@outlook.com](<andreattamimi@outlook.com>)
+[Andre Attamimi]({{ site.data.author.sionta.url }}) [andreattamimi@outlook.com](mailto:andreattamimi@outlook.com)
