@@ -37,4 +37,4 @@ title: Kebijakan
 
 Jika Anda memiliki pertanyaan tambahan tentang kebijakan privasi atau disclaimer kami, silakan hubungi kami melalui halaman kontak.
 
-[Andre Attamimi]({{ site.data.author.sionta.url }}) [andreattamimi@outlook.com](mailto:andreattamimi@outlook.com)
+**Andre Attamimi**: [andreattamimi@outlook.com](mailto:andreattamimi@outlook.com)
