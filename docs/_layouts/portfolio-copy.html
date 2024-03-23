@@ -6,17 +6,14 @@ layout: default
   .portfolio-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 7px;
-    margin-bottom: 20px;
   }
 
   .portfolio-item {
     overflow: hidden;
     position: relative;
-    width: calc(50% - 10px);
+    width: 50%;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
   }
 
   @media (max-width: 640px) {
@@ -26,20 +23,25 @@ layout: default
   }
 
   .portfolio-item-image {
+    width: 100%;
+    height: 200px; /* Atur tinggi sesuai kebutuhan */
     margin: 0 auto;
     overflow: hidden;
-    transition: transform 0.7s, border-radius 0.7s;
+    border-radius: 10px; /* Border radius */
+    transition: transform 0.7s, border-radius 0.7s; /* Transisi untuk efek hover */
   }
 
   .portfolio-item-image img {
     width: 100%;
-    height: auto;
+    height: 100%;
     object-fit: cover;
+    border-radius: 10px; /* Menjaga border-radius saat gambar berubah */
   }
 
   @media (hover: hover) {
     .portfolio-item:hover .portfolio-item-image {
       transform: scale(1.1);
+      border-radius: 20px; /* Menyesuaikan border-radius pada hover */
     }
 
     .portfolio-item:hover .portfolio-item-title {
@@ -63,21 +65,7 @@ layout: default
     top: 0;
     width: 100%;
     z-index: 9999;
-    opacity: 0;
-  }
-
-  .portfolio-link {
-    color: white;
-    /* Warna teks tautan */
-    text-decoration: none;
-    /* Menghapus garis bawah tautan */
-    transition: color 0.3s ease;
-    /* Transisi saat mengubah warna tautan */
-  }
-
-  .portfolio-link:hover {
-    color: lightgray;
-    /* Warna teks tautan saat dihover */
+    opacity: 0; /* Awalnya disetel menjadi tidak terlihat */
   }
 
   @media (hover: hover) {
@@ -87,27 +75,7 @@ layout: default
   }
 </style>
 
-<script>
-  window.addEventListener("load", function () {
-    adjustPortfolioItemHeight();
-  });
-
-  window.addEventListener("resize", function () {
-    adjustPortfolioItemHeight();
-  });
-
-  function adjustPortfolioItemHeight() {
-    var portfolioItems = document.querySelectorAll(".portfolio-item");
-    portfolioItems.forEach(function (item) {
-      var image = item.querySelector(".portfolio-item-image img");
-      var ratio = image.naturalWidth / image.naturalHeight;
-      var height = item.offsetWidth / ratio;
-      item.style.height = height + "px";
-    });
-  }
-</script>
-
-<div class="content portfolio-container">
+<div class="portfolio-container">
   {% for project in site.portfolio %}
   <div class="portfolio-item">
     <div class="portfolio-item-image">
@@ -118,7 +86,7 @@ layout: default
       {% endif %}
     </div>
     <div class="portfolio-item-title">
-      <a href="{{ project.repo }}" class="portfolio-link">{{ project.title }}</a>
+      <a href="{{ project.repo }}">{{ project.title }}</a>
     </div>
   </div>
   {% endfor %}
