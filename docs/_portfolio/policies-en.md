@@ -3,7 +3,7 @@ layout: page
 title: Policies
 ---
 
-> Last Update: {{ site.time | date: "%Y-%m-%d" }}
+> LAST UPDATE: {{ site.time | date: "%Y-%m-%d" }}
 
 ---
 
@@ -37,4 +37,4 @@ title: Policies
 
 If you have any additional questions about our privacy policy or disclaimer, please contact us through the contact page.
 
-Andre Attmimi [admin@{{ site.url | remove: 'http://' | remove: 'https://' | append: site.baseurl }}](admin@{{ site.url | remove: 'http://' | remove: 'https://' | append: site.baseurl }}) or <andrettamimi@outlook.com>
+**Andre Attamimi**: [andreattamimi@outlook.com](mailto:andreattamimi@outlook.com)

@@ -37,4 +37,4 @@ title: Kebijakan
 
 Jika Anda memiliki pertanyaan tambahan tentang kebijakan privasi atau disclaimer kami, silakan hubungi kami melalui halaman kontak.
 
-Andre Attmimi [admin@{{ site.url | remove: 'http://' | remove: 'https://' | append: site.baseurl }}](admin@{{ site.url | remove: 'http://' | remove: 'https://' | append: site.baseurl }}) atau <andrettamimi@outlook.com>
+**Andre Attamimi**: [andreattamimi@outlook.com](mailto:andreattamimi@outlook.com)
