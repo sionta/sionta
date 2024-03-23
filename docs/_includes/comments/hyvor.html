@@ -4,11 +4,8 @@
 {% assign is_hyvor = site.comments.active = = 'hyvor' %}
 {% assign website_id = site.comments.hyvor.website_id | default: '' %}
 {% if is_hyvor and website_id != '' %}
-  <script
-    async
-    src="https://talk.hyvor.com/embed/embed.js"
-    type="module"></script>
-  <style>
+  <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+  <!-- <style>
     hyvor-talk-comments {
       /* colors */
       /* --ht-color-accent: #000000; */
@@ -25,13 +22,13 @@
       --ht-box-radius: 0.25rem;
       --ht-button-radius: var(--ht-button-radius);
     }
-  </style>
+  </style> -->
   <div id="hyvor-talk-comments">
     <hyvor-talk-comments
       website-id="{{ site.comments.hyvor.website_id }}"
       page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-      loading="lazy"
-    ></hyvor-talk-comments>
+      colors="{{ site.theme_mode | default: os }}"
+      loading="lazy"></hyvor-talk-comments>
   </div>
 {% endif %}
 
