@@ -1,88 +1,11 @@
 <!-- https://talk.hyvor.com/docs/install -->
-<!-- The Hyvor Talk lazy loading. -->
-<div id="hyvor-talk-comments">
-  <hyvor-talk-comments
-  website-id="{{ site.comments.hyvor.website_id }}"
-  page-id=""
-  page-url=""
-  page-title=""
-  page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-  colors="os"
-  loading="lazy"
-  ></hyvor-talk-comments>
-  <p class="text-center text-muted small">Comments powered by <a href="https://talk.hyvor.com/">Hyvor Talk</a>.</p>
-</div>
 
-<script type="text/javascript">
-  /* Lazy loading */
-  var hyvor_observer = new IntersectionObserver(
-    function (entries) {
-      if (entries[0].isIntersecting) {
-        (function () {
-          var d = document,
-            s = d.createElement('script');
-          s.src = 'https://talk.hyvor.com/embed/embed.js';
-          s.type = 'module';
-          s.async = true;
-          (d.head || d.body).appendChild(s);
-        })();
-
-        hyvor_observer.disconnect();
-      }
-    },
-    { threshold: [0] }
-  );
-
-  hyvor_observer.observe(document.querySelector('#hyvor-talk-comments'));
-
-  /* Update Hyvor Talk colors based on theme */
-  function updateHyvorTalkColors(theme) {
-    var hyvorComments = document.querySelector('hyvor-talk-comments');
-    if (!hyvorComments) return;
-
-    if (theme === 'dark') {
-      hyvorComments.setAttribute('colors', 'dark'); // Dark mode colors
-    } else {
-      hyvorComments.setAttribute('colors', 'light'); // Light mode colors
-    }
-  }
-
-  /* Detect theme change */
-  function onThemeChange(theme) {
-    // Update Hyvor Talk colors when theme changes
-    updateHyvorTalkColors(theme);
-  }
-
-  // Listen for theme change event (replace 'YOUR_THEME_CHANGE_EVENT' with your actual event name)
-  document.addEventListener('message', function (event) {
-    onThemeChange(event.detail.theme);
-  });
-
-  // Initial color update based on current theme
-  var currentTheme = 'light'; // Set default theme
-  // Replace 'getTheme()' with your function to get the current theme ('light' or 'dark')
-  // Example: var currentTheme = getTheme();
-  updateHyvorTalkColors(currentTheme);
-</script>
-
-
-
-<!--
 {% assign is_hyvor = site.comments.active == 'hyvor' %}
 {% assign website_id = site.comments.hyvor.website_id | default: '' %}
 {% if is_hyvor and website_id != '' %}
   <div id="hyvor-talk-comments"></div>
   <style>
     hyvor-talk-comments {
-      /* colors */
-      /* --ht-color-accent: #000000; */
-      /* --ht-color-accent-text: #000000; */
-      /* --ht-color-box: #000000; */
-      /* --ht-color-box-text: #000000; */
-      /* --ht-color-box-text-light: #0000000; */
-      /* --ht-color-box-secondary: #000000; */
-      /* --ht-color-box-secondary-text: #000000; */
-
       /* other styles */
       --ht-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.05);
       --ht-box-radius: 10px;
@@ -97,10 +20,10 @@
     page-url=""
     page-title=""
     page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-    colors="os"
+    colors="{{ site.comments.hyvor.colors | default: 'os' }}"
     loading="lazy"
   ></hyvor-talk-comments>
-{% endif %} -->
+{% endif %}
 
 <!--
   <hyvor-talk-comments
