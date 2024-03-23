@@ -27,7 +27,7 @@
     <hyvor-talk-comments
       website-id="{{ site.comments.hyvor.website_id }}"
       page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-      colors="{{ site.theme_mode | default: os }}"
+      colors="{{ site.theme_mode | default: 'os' }}"
       loading="lazy"></hyvor-talk-comments>
   </div>
 {% endif %}
