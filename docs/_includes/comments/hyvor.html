@@ -17,7 +17,7 @@
       }
     }
 
-    // Function to detect theme change
+    // Function to detect theme change and update Hyvor Talk colors
     function detectThemeChange() {
       var darkThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
       updateHyvorTalkColors(darkThemeQuery.matches ? 'dark' : 'light'); // Initial update based on system theme
@@ -27,15 +27,22 @@
       });
     }
 
-    // Listen for Hyvor Talk events
-    document.addEventListener('DOMContentLoaded', detectThemeChange); // Listen for theme change on page load
+    // Listen for 'DOMContentLoaded' event to run detectThemeChange
+    document.addEventListener('DOMContentLoaded', detectThemeChange);
+
+    // Listen for 'comment:published' event
+    document.addEventListener('comment:published', function (e) {
+      console.log("Comment ID: " + e.detail.id);
+    });
   </script>
 
   <hyvor-talk-comments
     website-id="{{ site.comments.hyvor.website_id }}"
     page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
+    loading="lazy"
   ></hyvor-talk-comments>
 {% endif %}
+
 
 <!--
 {% assign is_hyvor = site.comments.active == 'hyvor' %}
