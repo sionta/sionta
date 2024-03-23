@@ -1,32 +1,55 @@
 <!-- https://talk.hyvor.com/docs/install -->
+<!-- https://talk.hyvor.com/docs/install -->
 
-{% assign is_hyvor = site.comments.active == 'hyvor' %}
+{% assign is_hyvor = site.comments.active = = 'hyvor' %}
 {% assign website_id = site.comments.hyvor.website_id | default: '' %}
 {% if is_hyvor and website_id != '' %}
-  <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
-  <div id="hyvor-talk-comments"></div>
+  <script
+    async
+    src="https://talk.hyvor.com/embed/embed.js"
+    type="module"></script>
   <style>
+    .hyvor-talk iframe {
+      border: none;
+      /* Optional: remove border if not needed */
+      width: 100%;
+      /* Adjust width as needed */
+    }
+
+    /* Customize the colors */
+    .hyvor-talk .hyvor-talk-title {
+      color: var(--text-color);
+      /* Match your text color */
+    }
+
+    .hyvor-talk .hyvor-talk-textarea {
+      background-color: var(--main-bg);
+      /* Match your background color */
+      color: var(--text-color);
+      /* Match your text color */
+    }
     hyvor-talk-comments {
       /* colors */
       /* --ht-color-accent: #000000; */
       /* --ht-color-accent-text: #000000; */
-      /* --ht-color-box: #000000; */
-      /* --ht-color-box-text: #000000; */
+      --ht-color-box: var(--main-bg);
+      --ht-color-box-text: var(--text-color);
       /* --ht-color-box-text-light: #0000000; */
       /* --ht-color-box-secondary: #000000; */
       /* --ht-color-box-secondary-text: #000000; */
 
       /* other styles */
-      --ht-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.05);
+      --ht-box-shadow: var(--main-bg);
       --ht-box-radius: 10px;
-      --ht-box-border: 1px solid transparent;
+      --ht-box-border: var(--main-border-color);
       --ht-button-radius: 10px;
     }
   </style>
   <hyvor-talk-comments
     website-id="{{ site.comments.hyvor.website_id }}"
     page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-    colors="{{ site.comments.hyvor.colors | default: 'os' }}"
     loading="lazy"
   ></hyvor-talk-comments>
 {% endif %}
+
+<!-- colors="{{ site.comments.hyvor.colors | default: 'os' }}" -->
