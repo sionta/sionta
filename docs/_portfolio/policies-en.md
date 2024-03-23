@@ -37,4 +37,4 @@ title: Policies
 
 If you have any additional questions about our privacy policy or disclaimer, please contact us through the contact page.
 
-Andre Attmimi [admin@{{ site.url | remove: 'http://' | remove: 'https://' }}](admin@{{ site.url | remove: 'http://' | remove: 'https://' }}) or <andrettamimi@outlook.com>
+Andre Attamimi [andreattamimi@outlook.com](<andreattamimi@outlook.com>)
