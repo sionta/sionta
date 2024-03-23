@@ -1,13 +1,68 @@
 <!-- https://talk.hyvor.com/docs/install -->
-<div id="hyvor-talk-view"></div>
-<script type="text/javascript">
-    var HYVOR_TALK_WEBSITE = '{{ site.comments.hyvor.website_id }}';
-    var HYVOR_TALK_CONFIG = {
-        url: '{{ page.url | absolute_url }}',
-        id: false
-    };
-</script>
-<script async type="text/javascript" src="//talk.hyvor.com/web-api/embed"></script>
+{% assign is_hyvor = site.comments.active == 'hyvor' %}
+{% assign website_id = site.comments.hyvor.website_id | default: '' %}
+{% if is_hyvor and website_id != '' %}
+  <div id="hyvor-talk-comments"></div>
+  <style>
+    hyvor-talk-comments {
+      /* other styles */
+      --ht-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.05);
+      --ht-box-radius: 10px;
+      --ht-box-border: 1px solid transparent;
+      --ht-button-radius: 10px;
+    }
+  </style>
+  <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
+  <script>
+    // Update Hyvor Talk colors based on the theme
+    function updateHyvorTalkColors(theme) {
+      var hyvorComments = document.querySelector('hyvor-talk-comments');
+      if (!hyvorComments) return;
+
+      if (theme === 'dark') {
+        hyvorComments.setAttribute('colors', 'dark'); // Dark mode colors
+      } else {
+        hyvorComments.setAttribute('colors', 'light'); // Light mode colors
+      }
+    }
+
+    // Handle Hyvor Talk events
+    function handleHyvorTalkEvent(event) {
+      switch (event.type) {
+        case 'loaded':
+          console.log('Hyvor Talk fully loaded');
+          break;
+        case 'comment:published':
+          console.log('New comment published:', event.detail);
+          // Add your custom logic here
+          break;
+        case 'comment:edited':
+          console.log('Comment edited:', event.detail);
+          // Add your custom logic here
+          break;
+        // Add cases for other supported events as needed
+        default:
+          console.log('Unhandled event:', event.type);
+          break;
+      }
+    }
+
+    // Listen for Hyvor Talk events
+    document.addEventListener('loaded', handleHyvorTalkEvent);
+    document.addEventListener('comment:published', handleHyvorTalkEvent);
+    document.addEventListener('comment:edited', handleHyvorTalkEvent);
+    // Add event listeners for other supported events as needed
+  </script>
+  <hyvor-talk-comments
+    website-id="{{ site.comments.hyvor.website_id }}"
+    page-id="{{ page.id }}"
+    page-url="{{ page.url | absolute_url }}"
+    page-title="{{ page.title }}"
+    page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
+    colors="{{ site.comments.hyvor.colors | default: 'os' }}"
+    loading="lazy"
+  ></hyvor-talk-comments>
+{% endif %}
 
 <!--
 {% assign is_hyvor = site.comments.active == 'hyvor' %}
