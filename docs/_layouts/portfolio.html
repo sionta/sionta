@@ -3,6 +3,19 @@ layout: page
 ---
 
 <style>
+  .image-container {
+    width: 100%; /* Atur lebar sesuai kebutuhan */
+    max-width: 400px; /* Contoh: maksimum lebar 400 piksel */
+    margin: 0 auto; /* Agar tampilan berada di tengah */
+  }
+
+  .image-container img {
+    border: 1px solid transparent;
+    width: 100%; /* Gambar akan menyesuaikan lebar container */
+    height: auto; /* Tinggi gambar akan disesuaikan secara proporsional */
+    display: block; /* Agar gambar berada di tengah container */
+  }
+
   .portfolio-container {
     display: flex;
     flex-direction: row;
@@ -71,21 +84,26 @@ layout: page
 
 <div class="portfolio-container">
   {% for item in site.portfolio reversed %}
-  <a href="{{ item.url }}" class="portfolio-item">
-    {% if item.image %}
-    {% capture src %}src="{{ item.image.path | default: item.image }}"{% endcapture %}
-    {% capture class %}class="portfolio-item-image{% if item.image.no_bg %} no-bg{% endif %}"{% endcapture %}
-    {% capture alt %}alt="{{ item.image.alt | xml_escape | default: "Preview Image" }}"{% endcapture %}
+    <a href="{{ item.url }}" class="portfolio-item">
+      {% if item.image %}
+        <div class="image-container">
+          {% capture src %}src="{{ item.image.path | default: item.image }}"{% endcapture %}
+          {% capture class %}class="portfolio-item-image{% if item.image.no_bg %} no-bg{% endif %}"{% endcapture %}
+          {% capture alt %}alt="{{ item.image.alt | xml_escape | default: "Preview Image" }}"{% endcapture %}
 
-    {% if item.image.lqip %}
-    {% capture lqip %}data-lqip="{{ item.image.lqip }}"{% endcapture %}
-    {% endif %}
-
-    <img {{ src }} {{ class }} {{ alt }} {{ lqip }}>
-    {% endif %}
-    <div class="portfolio-item-title">
-      {{ item.title }}
-    </div>
-  </a>
+          {% if item.image.lqip %}
+            {% capture lqip %}data-lqip="{{ item.image.lqip }}"{% endcapture %}
+          {% endif %}
+          <img {{ src }} {{ class }} {{ alt }} {{ lqip }}>
+        </div>
+      {% else %}
+        <div class="image-container">
+          <img src="/assets/img/posts/image-placeholder-4x3.png" alt="Image Placeholder">
+        </div>
+      {% endif %}
+      <div class="portfolio-item-title">
+        {{ item.title }}
+      </div>
+    </a>
   {% endfor %}
 </div>

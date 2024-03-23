@@ -2,7 +2,6 @@
 layout: page
 title: Dracula Theme
 image: https://draculatheme.com/_next/image?url=https%3A%2F%2Fraw.githubusercontent.com%2Fdracula%2Fmixplorer%2Fmaster%2Fscreenshot.png&w=828&q=100
-comments: true
 ---
 
 > **Repository:** [https://github.com/dracula/mixplorer](https://github.com/dracula/mixplorer){: target="\_blank"}
