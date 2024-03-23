@@ -1,38 +1,70 @@
 <!-- https://talk.hyvor.com/docs/install -->
-<!-- Hyvor Talk comments -->
+<!-- The Hyvor Talk lazy loading. -->
 <div id="hyvor-talk-comments">
   <hyvor-talk-comments
-      website-id="{{ site.comments.hyvor.website_id }}"
-      page-id="{{ page.url }}"
-      page-url="{{ page.url | absolute_url }}"
-      page-title="{{ page.title }}"
-      page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-      colors=""
-      loading="lazy"
+  website-id="{{ site.comments.hyvor.website_id }}"
+  page-id=""
+  page-url=""
+  page-title=""
+  page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
+  colors="os"
+  loading="lazy"
   ></hyvor-talk-comments>
+  <p class="text-center text-muted small">Comments powered by <a href="https://talk.hyvor.com/">Hyvor Talk</a>.</p>
 </div>
 
 <script type="text/javascript">
-    // Lazy load Hyvor Talk embed script
-    var script = document.createElement("script");
-    script.src = "https://talk.hyvor.com/embed/embed.js";
-    script.async = true;
-    script.type = "module";
-    document.head.appendChild(script);
+  /* Lazy loading */
+  var hyvor_observer = new IntersectionObserver(
+    function (entries) {
+      if (entries[0].isIntersecting) {
+        (function () {
+          var d = document,
+            s = d.createElement('script');
+          s.src = 'https://talk.hyvor.com/embed/embed.js';
+          s.type = 'module';
+          s.async = true;
+          (d.head || d.body).appendChild(s);
+        })();
 
-    // Function to set theme colors
-    function setThemeColors(mode) {
-        var talkComments = document.querySelector("hyvor-talk-comments");
-        talkComments.setAttribute("colors", mode);
+        hyvor_observer.disconnect();
+      }
+    },
+    { threshold: [0] }
+  );
+
+  hyvor_observer.observe(document.querySelector('#hyvor-talk-comments'));
+
+  /* Update Hyvor Talk colors based on theme */
+  function updateHyvorTalkColors(theme) {
+    var hyvorComments = document.querySelector('hyvor-talk-comments');
+    if (!hyvorComments) return;
+
+    if (theme === 'dark') {
+      hyvorComments.setAttribute('colors', 'dark'); // Dark mode colors
+    } else {
+      hyvorComments.setAttribute('colors', 'light'); // Light mode colors
     }
+  }
 
-    // Listen for color mode changes
-    window.addEventListener("message", function(event) {
-        if (event.data && event.data.direction === "ModeToggle") {
-            setThemeColors(event.data.mode);
-        }
-    });
+  /* Detect theme change */
+  function onThemeChange(theme) {
+    // Update Hyvor Talk colors when theme changes
+    updateHyvorTalkColors(theme);
+  }
+
+  // Listen for theme change event (replace 'YOUR_THEME_CHANGE_EVENT' with your actual event name)
+  document.addEventListener('message', function (event) {
+    onThemeChange(event.detail.theme);
+  });
+
+  // Initial color update based on current theme
+  var currentTheme = 'light'; // Set default theme
+  // Replace 'getTheme()' with your function to get the current theme ('light' or 'dark')
+  // Example: var currentTheme = getTheme();
+  updateHyvorTalkColors(currentTheme);
 </script>
+
 
 
 <!--
