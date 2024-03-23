@@ -15,5 +15,5 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          $excludes = "mixplorer, "imageglass"
+          $excludes = "mixplorer", "imageglass"
           & ./tools/sync-forks.ps1 -u sionta -e $excludes
