@@ -1,14 +1,16 @@
 <!-- https://talk.hyvor.com/docs/install -->
 <!-- Hyvor Talk comments -->
-<hyvor-talk-comments
-    website-id="{{ site.comments.hyvor.website_id }}"
-    page-id="{{ page.url }}"
-    page-url="{{ page.url | absolute_url }}"
-    page-title="{{ page.title }}"
-    page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-    colors=""
-    loading="lazy"
-></hyvor-talk-comments>
+<div id="hyvor-talk-comments">
+  <hyvor-talk-comments
+      website-id="{{ site.comments.hyvor.website_id }}"
+      page-id="{{ page.url }}"
+      page-url="{{ page.url | absolute_url }}"
+      page-title="{{ page.title }}"
+      page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
+      colors=""
+      loading="lazy"
+  ></hyvor-talk-comments>
+</div>
 
 <script type="text/javascript">
     // Lazy load Hyvor Talk embed script
