@@ -3,18 +3,9 @@
 {% assign website_id = site.comments.hyvor.website_id | default: '' %}
 {% if is_hyvor and website_id != '' %}
   <div id="hyvor-talk-comments"></div>
-  <style>
-    hyvor-talk-comments {
-      /* other styles */
-      --ht-box-shadow: 5px 5px 0px rgba(0, 0, 0, 0.05);
-      --ht-box-radius: 10px;
-      --ht-box-border: 1px solid transparent;
-      --ht-button-radius: 10px;
-    }
-  </style>
   <script async src="https://talk.hyvor.com/embed/embed.js" type="module"></script>
   <script>
-    // Update Hyvor Talk colors based on the theme
+    // Function to update Hyvor Talk colors based on the theme
     function updateHyvorTalkColors(theme) {
       var hyvorComments = document.querySelector('hyvor-talk-comments');
       if (!hyvorComments) return;
@@ -26,40 +17,26 @@
       }
     }
 
-    // Handle Hyvor Talk events
-    function handleHyvorTalkEvent(event) {
-      switch (event.type) {
-        case 'loaded':
-          console.log('Hyvor Talk fully loaded');
-          break;
-        case 'comment:published':
-          console.log('New comment published:', event.detail);
-          // Add your custom logic here
-          break;
-        case 'comment:edited':
-          console.log('Comment edited:', event.detail);
-          // Add your custom logic here
-          break;
-        // Add cases for other supported events as needed
-        default:
-          console.log('Unhandled event:', event.type);
-          break;
-      }
+    // Function to detect theme change
+    function detectThemeChange() {
+      var darkThemeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      updateHyvorTalkColors(darkThemeQuery.matches ? 'dark' : 'light'); // Initial update based on system theme
+
+      darkThemeQuery.addListener(function(event) {
+        updateHyvorTalkColors(event.matches ? 'dark' : 'light'); // Update colors when system theme changes
+      });
     }
 
     // Listen for Hyvor Talk events
-    document.addEventListener('loaded', handleHyvorTalkEvent);
-    document.addEventListener('comment:published', handleHyvorTalkEvent);
-    document.addEventListener('comment:edited', handleHyvorTalkEvent);
-    // Add event listeners for other supported events as needed
+    document.addEventListener('DOMContentLoaded', detectThemeChange); // Listen for theme change on page load
   </script>
+
   <hyvor-talk-comments
     website-id="{{ site.comments.hyvor.website_id }}"
-    page-id="{{ page.id }}"
-    page-url="{{ page.url | absolute_url }}"
+    page-id=""
+    page-url="{{ site.url }}{{ page.url }}"
     page-title="{{ page.title }}"
     page-language="{{ site.comments.hyvor.page_language | default: site.lang }}"
-    colors="{{ site.comments.hyvor.colors | default: 'os' }}"
     loading="lazy"
   ></hyvor-talk-comments>
 {% endif %}
