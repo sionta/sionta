@@ -3,7 +3,7 @@ layout: page
 title: Policies
 ---
 
-> Last Update: {{ site.time | date: "%Y-%m-%d" }}
+> LAST UPDATE: {{ site.time | date: "%Y-%m-%d" }}
 
 ---
 
