@@ -1,9 +1,0 @@
----
-# the default layout is 'page'
-layout: portfolio
-icon: fa-solid fa-briefcase
-order: 0
----
-
-> Add Markdown syntax content to file `_tabs/about.md`{: .filepath } and it will show up on this page.
-> {: .prompt-tip }
