@@ -3,13 +3,11 @@ layout: default
 refactor: true
 ---
 
-{% include kepala.html %}
 {% include lang.html %}
 
-{% assign pinned = site.posts | where: 'pin', 'true' %}
-{% assign default = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
-
 {% assign posts = '' | split: '' %}
+{% assign pinned = site.posts | where: 'pin', 'true' -%}
+{%- assign default = site.posts | where_exp: 'item', 'item.pin != true and item.hidden != true' %}
 
 <!-- Get pinned posts -->
 
@@ -21,8 +19,7 @@ refactor: true
     {% assign posts = posts | push: pinned[i] %}
   {% endfor %}
 {% else %}
-  {% assign pinned_num = 0 %}
-{% endif %}
+  {% assign pinned_num = 0 -%}{%- endif %}
 
 <!-- Get default posts -->
 
@@ -31,10 +28,8 @@ refactor: true
 {% if default_beg < 0 %}
   {% assign default_beg = 0 %}
 {% endif %}
-
 {% assign default_num = paginator.posts | size | minus: pinned_num %}
 {% assign default_end = default_beg | plus: default_num | minus: 1 %}
-
 {% if default_num > 0 %}
   {% for i in (default_beg..default_end) %}
     {% assign posts = posts | push: default[i] %}
@@ -62,7 +57,10 @@ refactor: true
           {% endif %}
 
           <div class="col-md-5">
-            <img src="{{ src }}" alt="{{ alt }}" {{ lqip }}>
+            <img
+              src="{{ src }}"
+              alt="{{ alt }}"
+              {{ lqip }}>
           </div>
 
           {% assign card_body_col = '7' %}
@@ -104,9 +102,9 @@ refactor: true
                 </div>
               {% endif %}
             </div>
-            <!-- .post-meta -->
+          <!-- .post-meta -->
           </div>
-          <!-- .card-body -->
+        <!-- .card-body -->
         </div>
       </a>
     </article>

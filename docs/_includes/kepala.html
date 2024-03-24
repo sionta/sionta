@@ -16,8 +16,8 @@
   .small-header {
     position: relative;
     width: 100%;
-    height: 150px; /* Sesuaikan dengan ketinggian yang diinginkan */
-    background-image: url("https://via.placeholder.com/600x150"); /* Sesuaikan dengan gambar yang diinginkan */
+    height: 150px;
+    background-image: url("https://via.placeholder.com/600x150");
     background-size: cover;
     background-position: center;
     display: flex;
@@ -25,6 +25,7 @@
     justify-content: center;
     text-align: center;
   }
+
   .overlay {
     position: absolute;
     top: 0;
@@ -107,8 +108,7 @@
   }
 </style>
 
-<div class="overlay"></div>
-<div class="header-content">
+<div class="header-content overlay">
   <h1>Welcome to Our Website</h1>
   <p>Discover the world of creativity</p>
   <a href="/about/" class="cta-btn">Explore Now</a>
