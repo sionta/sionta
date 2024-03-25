@@ -1,0 +1,27 @@
+{
+    "code-eol.crlfCharacter": "↵",
+    "code-eol.newlineCharacter": "↓",
+    "code-eol.returnCharacter": "←",
+    "editor.fontFamily": "'Fira Code Retina', Consolas, monospace",
+    /* "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss03', 'ss04', 'ss05', 'ss06', 'zero', 'onum'", */
+    "editor.fontLigatures": true,
+    "editor.fontSize": 19,
+    "editor.formatOnSave": true,
+    "editor.guides.bracketPairs": "active",
+    "editor.lineHeight": 29,
+    "editor.linkedEditing": true,
+    "editor.minimap.autohide": true,
+    "editor.minimap.maxColumn": 99,
+    "editor.renderWhitespace": "trailing",
+    "files.trimTrailingWhitespace": true,
+    "powershell.codeFormatting.autoCorrectAliases": true,
+    "powershell.codeFormatting.preset": "OTBS",
+    "powershell.codeFormatting.useConstantStrings": true,
+    "powershell.codeFormatting.useCorrectCasing": true,
+    "powershell.enableProfileLoading": true,
+    "powershell.integratedConsole.suppressStartupBanner": true,
+    "terminal.integrated.fontFamily": "'Hack Nerd Font Mono', 'MesloLGM Nerd Font Mono', Consolas, monospace",
+    "workbench.colorTheme": "Noctis Minimus",
+    "workbench.sideBar.location": "right",
+    "workbench.startupEditor": "none"
+}

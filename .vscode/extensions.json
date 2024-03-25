@@ -1,0 +1,9 @@
+{
+    "recommendations": [
+        "github.vscode-github-actions",
+        "ms-vscode.powershell",
+        "liviuschera.noctis",
+        "medo64.render-crlf",
+        "shardulm94.trailing-spaces"
+    ]
+}
