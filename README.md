@@ -1,6 +1,4 @@
-## Hi there <img src="./assets/images/emoji_hand_raised.gif" alt="Hand Raised Emoji" height="24">
-
-**sionta/sionta** is a ✨ _special_ ✨ repository because it appears on your GitHub profile.
+# Hi there <img src="./assets/images/emoji_hand_raised.gif" alt="Hand Raised Emoji" height="30">
 
 [![Dracula MiXplorer](https://github-readme-stats.vercel.app/api/pin/?username=dracula&repo=mixplorer&theme=dracula&hide_border=false&show_owner=true)](https://github.com/dracula/mixplorer)
 
