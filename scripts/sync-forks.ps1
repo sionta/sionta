@@ -11,12 +11,12 @@ param (
 )
 
 try {
-    $repos = & gh repo list $userName --fork --json name --jq '.[].name'
+    $repos = gh repo list $userName --fork --json name --jq '.[].name'
     $params = if ($hardReset) { '--force' } else { $null }
     foreach ($repo in $repos) {
         if ($repo -notin $Excludes) {
             Write-Host "Synchronizing '$userName/$repo'..."
-            & gh repo sync "$userName/$repo" $params
+            gh repo sync "$userName/$repo" $params
         }
     }
 } catch {
