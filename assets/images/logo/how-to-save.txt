@@ -1,0 +1,10 @@
+1. File > Export > Export as
+   - Save as type: SVG (*.SVG)
+   - Use Artboards
+   - SVG Options:
+     - Styling: Internal CSS
+     - Font: SVG
+     - Images: Preserve
+     - Object IDs: Layer Names
+     - Decimal: 2
+     - Checklist Minify and Responsive
