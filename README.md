@@ -7,7 +7,7 @@ I'm a passionate software developer with a love for creating innovative solution
 - 🌱 I’m currently learning Backend developer
 - 👯 I’m looking to collaborate on open-source projects
 <!-- - 💬 Ask me about [your areas of expertise or interest] -->
-- 📫 How to reach me: [rumatua0@gmail.com](mailto:rumatua0@gmail.com)
+- 📫 How to reach me: [rumatua0@proton.me](mailto:rumatua0@proton.me)
 - ⚡ Fun fact: Don’t make a camel angry – they can spit as a way to distract whatever they think is a threat.
 
 <!-- ## Skills
