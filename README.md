@@ -20,8 +20,8 @@ I'm a passionate software developer with a love for creating innovative solution
 
 Here are some of the projects I've been working on:
 
+- [Gim Tweaks](Uhttps://github.com/sionta/gim-tweaks) - Magisk module all-in-one tweak for gaming experience.
 - [Dracula for MiXplorer](https://github.com/dracula/mixplorer) - Dark theme for MiXplorer.
-<!-- - [Project 2](URL to project) - A brief description of Project 2. -->
 
 ## GitHub Stats
 
